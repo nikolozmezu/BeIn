@@ -1,0 +1,341 @@
+/* font importing */
+
+@font-face {
+    font-family: work-sans;
+    src: url(/assets/fonts/WorkSans-VariableFont_wght.ttf);
+}
+
+/* global classes */
+/* grid */
+.dis-grid { display: grid; }
+
+/* flex */
+.dis-flex { display: flex; }
+.align-center { align-items: center; }
+.flex-center { justify-content: center; }
+.sp-bet { justify-content: space-between; }
+
+/* block */
+.dis-block { display: block; }
+
+/* positions */
+.pos-abs { position: absolute; }
+.pos-rel { position: relative; }
+
+
+.txt-center { text-align: center; }
+
+/* global variables */
+:root {
+    --bg-color: #F5F5F5;
+    --border-color: #EBEBEB;
+    --accent-color: #1F50FF;
+    --status-color: #4B71F9;
+    --txt-color: #303030;
+    --txt-input: #888;
+    --p-color: #555;
+    --section-bg-color: #fff;
+    --button-bg: #E9E9E9;
+}
+
+/* globa tags */
+h1,h2,h3,h4,h5,h6 {text-transform: capitalize;}
+body.homepage {
+    gap:30px;
+    position: relative;
+    font-family: "work-sans";
+    background-color: var(--bg-color);
+    grid-template-columns: repeat(6, 1fr)
+}
+ul li { list-style-type: none;}
+
+body.homepage :is(header, aside, main) { background-color: var(--section-bg-color);}
+
+
+/* page styling */
+
+
+/* header styling */
+
+body.homepage header {
+    padding: 25px 36px;
+    column-gap: 65px;
+    border-radius: 0px 0px 10px 10px;
+    grid-column: 2/7;
+    grid-row: 1/2;
+}
+
+body.homepage header div.header-item.home a {
+    text-decoration: none;
+    column-gap: 12px;
+    text-transform: capitalize;
+    color: var(--p-color);
+    font-size: 14px;
+}
+
+input.d-input {
+    border-radius: 20px;
+    background-color: var(--bg-color);
+    font-size: 12px;
+    padding: 13px 13px 13px 57px;
+    color: var(--txt-input);
+    border-color: transparent;
+    outline-color: transparent;
+}
+body.homepage header form.header-item.search button {
+    background-color: transparent;
+    border-color: transparent;
+    outline-color: transparent;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    cursor: pointer;
+}
+input::placeholder {
+    color: var(--txt-input);
+    text-transform: capitalize;
+}
+
+header nav { column-gap: 15px; }
+header nav a:last-child { margin-left: 15px;}
+header nav a:last-child img.prof-pic {width: 70%; }
+
+/* ///////////////////////////////////////////////// */
+
+/* left sidebar styling */
+aside.sidebar.left div.aside-item:not(:last-child) { border-bottom: 1px solid var(--border-color); margin-bottom: 15px;}
+aside.sidebar.left div.aside-item:nth-child(-n+3) { padding-bottom: 15px; }
+
+body.homepage aside.sidebar.left { 
+    grid-column: 1/2;
+    padding: 18px 23px;
+    grid-row: 1/4;
+}
+/* aside.sidebar.left div.logo { padding-bottom: 18px; } */
+aside.sidebar.left div.logo a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+img.prof-pic {
+    width: 100%;
+    height: auto;
+    border: 6px solid var(--border-color);
+    border-radius: 50px;
+}
+
+aside.sidebar.left div.profile-box span.profile-name {
+    text-transform: capitalize;
+    line-height: 19px;
+}
+aside.sidebar.left div.profile span.note {
+    color: var(--accent-color);
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+aside.sidebar.left div.profile-box { column-gap: 18px; margin-bottom: 13px; }
+div.status-bar.dis-flex.flex-center { column-gap: 60px; }
+div.status-bar.dis-flex.flex-center span {
+    margin-bottom: 10px;
+    color: var(--txt-color);
+    font-weight: 600;
+}
+
+div.status-bar.dis-flex.flex-center h6 {
+    font-size: 12px;
+    font-weight: 400;
+}
+div.aside-item.user-navigation { padding-bottom: 40px; }
+div.aside-item.user-navigation ul li:not(:last-child) {margin-bottom: 7px}
+.aside-item.user-navigation nav ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--txt-color);
+    column-gap: 17px;
+    text-transform: capitalize;
+}
+.aside-item.user-navigation nav ul li {padding: 10px; transition: .4s ease-out;}
+.aside-item.user-navigation nav ul li:hover {
+    background-color: var(--border-color);
+    border-radius: 10px;
+    transition: .4s ease-out;
+}
+
+div.aside-item.pins div.pin-wrapper.dis-flex { margin-top: 23px; }
+div.aside-item.pins div.pin-info.dis-flex {
+    font-size: 14px;
+    column-gap: 5px;
+}
+
+div.aside-item.pins div.pin-wrapper div:not(:last-child) { margin-bottom: 8px; }
+div.aside-item.pins div.see-more.dis-flex {
+    margin-top:32px;
+    column-gap: 16px;
+}
+
+div.aside-item.pins div.see-more.dis-flex button.seemore {
+    background-color: var(--button-bg);
+    border: none;
+    border-radius: 50px;
+    padding: 10px;
+    cursor: pointer;
+
+}
+
+/* main styling */
+
+body.homepage main {
+    grid-column: 2/6;
+    background-color: transparent;
+}
+
+body.homepage main form.share {
+    background-color: var(--section-bg-color);
+    border-radius: 10px;
+    padding: 14px 38px;
+}
+
+body.homepage main form.share input#share {
+    padding-left: 19px;
+    width: 90%;
+}
+
+body.homepage main form.share div.top-box {
+    column-gap: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 25px;
+
+}
+body.homepage main form.share div.bottom-box a {
+    text-decoration: none;
+    color: #303030;
+    text-transform: capitalize;
+    column-gap: 5px;
+    transition: .3s ease-in-out;
+}
+body.homepage main form.share div.bottom-box ul li:not(:last-child) {
+    border-right: 2px solid var(--border-color);
+    padding: 0 12px;
+}
+
+body.homepage main form.share div.bottom-box ul li:last-child { padding-left: 12px; }
+body.homepage main form.share div.bottom-box { justify-content: space-around; margin-top:30px}
+
+body.homepage main form.share div.bottom-box button#share-btn {
+    background-color: var(--accent-color);
+    color: var(--section-bg-color);
+    padding: 11px 21px;
+    font-size: 14px;
+    cursor: pointer;
+    border-color: transparent;
+    border-radius: 20px;
+    transition: .3s ease-out;
+    text-transform: capitalize;
+}
+
+body.homepage main form.share div.bottom-box button#share-btn:hover {
+    background-color: var(--section-bg-color);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+body.homepage main form.share div.bottom-box button#share-btn:hover path { stroke: #000}
+body.homepage main form.share div.bottom-box nav ul li:hover a {
+    transform: translateY(-5px);
+    transition: .3s ease-in-out;
+}
+
+body.homepage main section.posts {
+    padding: 23px 27px;
+    background-color: var(--section-bg-color);
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+body.homepage main section.posts article img.author-img { border-radius: 50px; }
+
+body.homepage main section.posts article .activity-status {
+    color: var(--status-color);
+    font-size: 10px;
+    font-weight: 500;
+    margin-top: 9px;
+}
+
+body.homepage main section.posts article p.excrepts {
+    margin: 15px 0;
+    color: var(--p-color);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+body.homepage main section.posts article div.article-actions ul li.like svg:hover {fill: red;}
+body.homepage main section.posts article div.article-actions a.seemore {
+    color: var(--accent-color);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+body.homepage main section.posts article {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+/* ///////////////////////////////////////////////// */
+body.homepage aside.sidebar.right h6 {color: #303030;}
+body.homepage aside.sidebar.right {
+    border-radius: 10px;
+    padding: 21px 22px;
+}
+
+body.homepage aside.sidebar.right div.recent-activity {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+body.homepage aside.sidebar.right div.recent-activity img { 
+    border-radius: 10px;
+    margin: 15px 0 25px;
+
+}
+
+body.homepage aside.sidebar.right div.recent-activity a {
+    color: var(--accent-color);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+
+body.homepage aside.sidebar.right > div {
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 16px;
+    margin-top: 17px;
+}
+
+div.additional-news div.dis-flex {column-gap: 12px;}
+div.additional-news  p {
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 12px;
+    color: var(--p-color);
+}
+
+div.lists {column-gap: 12px}
+div.lists img {border-radius: 50px; width: 50%;}
+body.homepage aside.sidebar.right div.lists h6 {
+    font-size: 12px;
+    color: var(--p-color);
+}
+div.lists li:not(:last-child) { margin-bottom: 30px;}
+
+div.lists li:nth-last-child(-n+2) a {
+    background-color: var(--button-bg);
+    border-radius: 50px;
+    padding: 10px;
+}
+div.lists li:nth-last-child(-n+2) {column-gap: 20px}
